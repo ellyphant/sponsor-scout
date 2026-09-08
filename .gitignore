@@ -1,0 +1,16 @@
+node_modules/
+
+# Sandbox runtime state — restored from draft snapshots, not project history
+.logs/
+.sandbox-state.json
+.remy-session.json
+.remy-stats.json
+.remy-design-sample.json
+.remy-plan.md
+.remy-brand.json
+.remy-brand.cache.json
+.project-status.json
+
+# Web interface build output — the platform builds the SPA at release; never commit it
+# (root dist/ is real source by Remy convention — only the vite output is ignored)
+dist/interfaces/web/dist/
