@@ -1,0 +1,14 @@
+import type { Users } from '../tables/users';
+import type { Sponsors } from '../tables/sponsors';
+import type { ScoutRuns } from '../tables/scoutRuns';
+import type { Assessments } from '../tables/assessments';
+import type { Drafts } from '../tables/drafts';
+import type { DispatchAttempts } from '../tables/dispatchAttempts';
+import type { RunActivity } from '../tables/runActivity';
+export type UserRow = NonNullable<Awaited<ReturnType<typeof Users.get>>>;
+export type SponsorRow = NonNullable<Awaited<ReturnType<typeof Sponsors.get>>>;
+export type RunRow = NonNullable<Awaited<ReturnType<typeof ScoutRuns.get>>>;
+export type AssessmentRow = NonNullable<Awaited<ReturnType<typeof Assessments.get>>>;
+export type DraftRow = NonNullable<Awaited<ReturnType<typeof Drafts.get>>>;
+export type AttemptRow = NonNullable<Awaited<ReturnType<typeof DispatchAttempts.get>>>;
+export type ActivityRow = NonNullable<Awaited<ReturnType<typeof RunActivity.get>>>;

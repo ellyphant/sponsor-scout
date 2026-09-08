@@ -1,22 +1,157 @@
 {
   "appId": "c4d351f7-fd79-4c04-9913-520a47280ac8",
-  "name": "New App",
-  "description": "An empty MindStudio App",
+  "name": "Sponsor Scout",
+  "description": "A private Astra-powered console for researching sponsors, matching CoHost Club events, and approving outreach.",
+  "auth": {
+    "enabled": true,
+    "methods": ["email-code"],
+    "table": {
+      "name": "users",
+      "columns": {
+        "email": "email",
+        "roles": "roles"
+      }
+    }
+  },
   "roles": [],
   "tables": [
     {
-      "name": "greetings",
-      "path": "dist/methods/src/tables/default.ts",
-      "export": "Greetings"
+      "name": "users",
+      "path": "dist/methods/src/tables/users.ts",
+      "export": "Users"
+    },
+    {
+      "name": "sponsors",
+      "path": "dist/methods/src/tables/sponsors.ts",
+      "export": "Sponsors"
+    },
+    {
+      "name": "scout_runs",
+      "path": "dist/methods/src/tables/scoutRuns.ts",
+      "export": "ScoutRuns"
+    },
+    {
+      "name": "run_activity",
+      "path": "dist/methods/src/tables/runActivity.ts",
+      "export": "RunActivity"
+    },
+    {
+      "name": "sponsor_assessments",
+      "path": "dist/methods/src/tables/assessments.ts",
+      "export": "Assessments"
+    },
+    {
+      "name": "outreach_drafts",
+      "path": "dist/methods/src/tables/drafts.ts",
+      "export": "Drafts"
+    },
+    {
+      "name": "dispatch_attempts",
+      "path": "dist/methods/src/tables/dispatchAttempts.ts",
+      "export": "DispatchAttempts"
+    },
+    {
+      "name": "operation_claims",
+      "path": "dist/methods/src/tables/operationClaims.ts",
+      "export": "OperationClaims"
     }
   ],
   "methods": [
     {
-      "id": "hello-world",
-      "name": "Hello World",
-      "description": "Takes a name and generates a creative AI greeting.",
-      "path": "dist/methods/src/helloWorld.ts",
-      "export": "helloWorld"
+      "id": "get-workspace",
+      "name": "Open Workspace",
+      "path": "dist/methods/src/getWorkspace.ts",
+      "export": "getWorkspace"
+    },
+    {
+      "id": "get-run",
+      "name": "Read Scout Run",
+      "path": "dist/methods/src/getRun.ts",
+      "export": "getRun"
+    },
+    {
+      "id": "watch-workspace",
+      "name": "Watch Workspace",
+      "path": "dist/methods/src/watchWorkspace.ts",
+      "export": "watchWorkspace"
+    },
+    {
+      "id": "read-updates",
+      "name": "Read Workspace Updates",
+      "path": "dist/methods/src/readUpdates.ts",
+      "export": "readUpdates"
+    },
+    {
+      "id": "save-sponsor",
+      "name": "Save Sponsor",
+      "path": "dist/methods/src/saveSponsor.ts",
+      "export": "saveSponsor"
+    },
+    {
+      "id": "set-sponsor-status",
+      "name": "Set Sponsor Status",
+      "path": "dist/methods/src/setSponsorStatus.ts",
+      "export": "setSponsorStatus"
+    },
+    {
+      "id": "save-profile",
+      "name": "Save Operator Preferences",
+      "path": "dist/methods/src/saveProfile.ts",
+      "export": "saveProfile"
+    },
+    {
+      "id": "check-connection",
+      "name": "Check Connection",
+      "path": "dist/methods/src/checkConnection.ts",
+      "export": "checkConnection"
+    },
+    {
+      "id": "verify-sender",
+      "name": "Verify Managed Sender",
+      "path": "dist/methods/src/verifySender.ts",
+      "export": "verifySender"
+    },
+    {
+      "id": "start-run",
+      "name": "Start Scout Run",
+      "path": "dist/methods/src/startRun.ts",
+      "export": "startRun"
+    },
+    {
+      "id": "stop-run",
+      "name": "Stop or Abandon Run",
+      "path": "dist/methods/src/stopRun.ts",
+      "export": "stopRun"
+    },
+    {
+      "id": "save-draft",
+      "name": "Save Draft Edits",
+      "path": "dist/methods/src/saveDraft.ts",
+      "export": "saveDraft"
+    },
+    {
+      "id": "reject-draft",
+      "name": "Reject Draft",
+      "path": "dist/methods/src/rejectDraft.ts",
+      "export": "rejectDraft"
+    },
+    {
+      "id": "prepare-dispatch",
+      "name": "Review Recipient",
+      "path": "dist/methods/src/prepareDispatch.ts",
+      "export": "prepareDispatch"
+    },
+    {
+      "id": "confirm-dispatch",
+      "name": "Confirm Approved Dispatch",
+      "path": "dist/methods/src/confirmDispatch.ts",
+      "export": "confirmDispatch"
+    },
+    {
+      "id": "refresh-delivery",
+      "name": "Refresh Email Delivery",
+      "path": "dist/methods/src/refreshDelivery.ts",
+      "export": "refreshDelivery"
     }
   ],
   "interfaces": [
@@ -25,5 +160,24 @@
       "path": "dist/interfaces/web/web.json"
     }
   ],
-  "scenarios": []
+  "scenarios": [
+    {
+      "id": "sponsorship-desk",
+      "name": "Sponsorship Desk",
+      "description": "Eight fictional sponsors, six event snapshots, two sample drafts and a recorded research run. No real outreach.",
+      "path": "dist/methods/.scenarios/sponsorshipDesk.ts",
+      "export": "sponsorshipDesk",
+      "roles": []
+    },
+    {
+      "id": "empty-workspace",
+      "name": "Empty Workspace",
+      "description": "A clean console for first-use setup and live data. Clears development database rows only.",
+      "path": "dist/methods/.scenarios/emptyWorkspace.ts",
+      "export": "emptyWorkspace",
+      "roles": []
+    }
+  ],
+  "iconUrl": "https://i.mscdn.ai/o/BqBHIShPM59EtKMh/images/af0e0ca6-4a0e-49ec-acd3-61f8c24909c2_1788894828901.png",
+  "openGraphShareImageUrl": "https://i.mscdn.ai/o/BqBHIShPM59EtKMh/images/af0e0ca6-4a0e-49ec-acd3-61f8c24909c2_1788898827682.png"
 }

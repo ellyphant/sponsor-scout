@@ -1,5 +1,42 @@
 {
-  "pitch": "pitch.html",
-  "lanes": [],
-  "standalone": []
+  "pitch": "src/roadmap/pitch.html",
+  "lanes": [
+    {
+      "name": "The Right Moment",
+      "narrative": "Turn cited research into a living view of what changed, when to revisit a sponsor, and which opportunity deserves attention now.",
+      "items": [
+        "sponsor-signal-timeline.md",
+        "sponsor-signal-watch.md",
+        "weekly-opportunity-brief.md"
+      ]
+    },
+    {
+      "name": "From Email to Introduction",
+      "narrative": "Carry context beyond approved outreach, from operator-recorded replies to explicit, consented introductions between sponsors and hosts.",
+      "items": [
+        "relationship-journal.md",
+        "reply-briefs.md",
+        "introduction-rooms.md"
+      ]
+    },
+    {
+      "name": "A Season, Not a Spreadsheet",
+      "narrative": "Move from individual matches to a deliberate event portfolio, then use confirmed outcomes to sharpen the next season's sponsorship choices.",
+      "items": [
+        "event-coverage-map.md",
+        "season-partner-plans.md",
+        "partnership-learning-reviews.md"
+      ]
+    },
+    {
+      "name": "Independent Desks, Shared Opportunity",
+      "narrative": "Make Scout safe to demonstrate, useful with independent event sources, and capable of a consent-based network without exposing private prospecting.",
+      "items": [
+        "shareable-scout-stories.md",
+        "bring-your-own-events.md",
+        "community-sponsor-network.md"
+      ]
+    }
+  ],
+  "standalone": ["mvp.md"]
 }

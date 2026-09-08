@@ -1,0 +1,56 @@
+---
+name: Live Run — Activity & Findings
+description: Reframed centerpiece: real research activity (searches, sources read) and concise CITED decision summaries — not private chain of thought. Verdicts and contact findings carry source chips; events quote CoHost's free-text ask. Live amber caret on the active line, REPLAY re-runs the staggered entrance.
+---
+<html lang="en"><head><meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Mono',monospace;background:transparent;display:flex;align-items:center;justify-content:center;padding:20px}
+.panel{width:544px;background:#0B0A07;border:1px solid #2B261C;border-radius:12px;padding:0 4px 14px;color:#ECE5D6;box-shadow:0 24px 62px rgba(0,0,0,.6)}
+.hd{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid #221E16}
+.hd .t{font-size:11px;letter-spacing:.2em;color:#948B79}
+.replay{font-size:10px;letter-spacing:.14em;color:#FFB020;background:rgba(255,176,32,.07);border:1px solid rgba(255,176,32,.35);border-radius:6px;padding:5px 10px;cursor:pointer}
+.log{padding:4px 16px 0}
+.row{display:grid;grid-template-columns:56px 20px 1fr;padding:10px 0;opacity:0;transform:translateY(6px)}
+.log.run .row{animation:in .4s ease forwards}
+.log.run .row:nth-child(1){animation-delay:.05s}.log.run .row:nth-child(2){animation-delay:.45s}
+.log.run .row:nth-child(3){animation-delay:.9s}.log.run .row:nth-child(4){animation-delay:1.3s}
+.log.run .row:nth-child(5){animation-delay:1.7s}.log.run .row:nth-child(6){animation-delay:2.1s}
+@keyframes in{to{opacity:1;transform:none}}
+.ts{font-size:11px;color:#6E675A;padding-top:2px;font-variant-numeric:tabular-nums}
+.spine{position:relative;display:flex;justify-content:center}
+.spine:before{content:"";position:absolute;top:-10px;bottom:-10px;width:1px;background:#221E16}
+.node{width:8px;height:8px;border-radius:50%;margin-top:3px;background:#0B0A07;border:1.5px solid #948B79;z-index:1}
+.node.a{border-color:#FFB020;box-shadow:0 0 8px rgba(255,176,32,.6)}
+.node.g{background:#57E39A;border-color:#57E39A;box-shadow:0 0 8px rgba(87,227,154,.6)}
+.c{font-size:13px;line-height:1.5}
+.tool{color:#FFB020;font-weight:600}
+.q{color:#7A7263}
+.act{color:#A79E8C}
+.g2{color:#57E39A;font-weight:600}
+.sum{color:#A79E8C;font-size:12.5px;line-height:1.55;margin-top:4px}
+.ask{color:#A79E8C;font-size:12.5px;margin-top:4px}
+.cites{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap}
+.cite{font-size:10px;color:#948B79;background:#161309;border:1px solid #241F16;border-radius:5px;padding:3px 7px;letter-spacing:.02em}
+.cite b{color:#C9A15F;font-weight:400}
+.caret{display:inline-block;width:8px;height:15px;background:#FFB020;vertical-align:-2px;margin-left:3px;animation:bl 1s steps(1) infinite;box-shadow:0 0 8px rgba(255,176,32,.7)}
+@keyframes bl{50%{opacity:0}}
+</style></head>
+<body>
+<div class="panel">
+ <div class="hd"><span class="t">ACTIVITY · FINDINGS</span><span class="replay" id="rp">▸ REPLAY</span></div>
+ <div class="log run" id="log">
+  <div class="row"><div class="ts">02:14.1</div><div class="spine"><div class="node a"></div></div><div class="c"><span class="tool">◇ SEARCH WEB</span> <span class="q">"climate-tech dev conferences 2026 sponsors"</span></div></div>
+  <div class="row"><div class="ts">02:15.6</div><div class="spine"><div class="node"></div></div><div class="c act">↳ Read 6 sources<div class="cites"><span class="cite"><b>↗</b> heliogrid.com</span><span class="cite"><b>↗</b> techcrunch.com</span><span class="cite">+4</span></div></div></div>
+  <div class="row"><div class="ts">02:17.0</div><div class="spine"><div class="node g"></div></div><div class="c"><span class="g2">✓ QUALIFIED</span> Helio Grid <span class="q">· fit 0.88</span><div class="sum">Series B ($60M) with an active brand campaign; sponsored 3 comparable developer events in 12 months.</div><div class="cites"><span class="cite"><b>↗</b> techcrunch.com</span><span class="cite"><b>↗</b> heliogrid.com/blog</span></div></div></div>
+  <div class="row"><div class="ts">02:17.4</div><div class="spine"><div class="node a"></div></div><div class="c">→ MATCH  Helio Grid <span class="q">↔</span> <span class="tool">DevWorld Summit</span><div class="ask">ask: <span class="q">"seeking a headline partner for our climate track"</span></div></div></div>
+  <div class="row"><div class="ts">02:18.9</div><div class="spine"><div class="node a"></div></div><div class="c"><span class="tool">⌾ CONTACT</span> Dana Osei <span class="q">· Head of Brand Partnerships</span><div class="cites"><span class="cite"><b>↗</b> linkedin.com</span><span class="cite"><b>↗</b> heliogrid.com/team</span></div></div></div>
+  <div class="row"><div class="ts">02:19.3</div><div class="spine"><div class="node a"></div></div><div class="c act">✎ Drafting outreach — leading with the climate-track fit<span class="caret"></span></div></div>
+ </div>
+</div>
+<script>
+var log=document.getElementById('log');
+document.getElementById('rp').onclick=function(){log.classList.remove('run');void log.offsetWidth;log.classList.add('run');};
+</script>
+</body></html>

@@ -1,47 +1,35 @@
-// Side-effect import: loads the platform SDK so it can auto-init analytics
-// (pageviews, presence) and uncaught-error reporting on startup. Required
-// even if you don't call SDK methods directly — without this, Vite tree-
-// shakes the package out of the bundle and telemetry never starts. Do not
-// remove unless you intentionally want to disable platform telemetry.
 import '@mindstudio-ai/interface';
-
 import { Component, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App.tsx';
+import App from './App';
 import './global.css';
-
-class ErrorBoundary extends Component<
-  { children: ReactNode },
-  { error: Error | null }
-> {
+class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
   state = { error: null as Error | null };
   static getDerivedStateFromError(error: Error) {
     return { error };
   }
   render() {
-    if (this.state.error) {
+    if (this.state.error)
       return (
-        <pre
-          style={{
-            padding: 24,
-            color: '#ff5555',
-            fontSize: 13,
-            fontFamily: 'monospace',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-word',
-          }}
-        >
-          {this.state.error.message}
-          {'\n'}
-          {this.state.error.stack}
-        </pre>
+        <main className="fatal-error">
+          <span className="eyebrow">SPONSOR SCOUT</span>
+          <h1>The console couldn't render.</h1>
+          <p>Your saved work remains in the database.</p>
+          <pre>{this.state.error.message}</pre>
+          <button className="button primary" onClick={() => window.location.reload()}>
+            Reload console
+          </button>
+        </main>
       );
-    }
     return this.props.children;
   }
 }
-
-createRoot(document.getElementById('root')!).render(
+// Preserve the React root when Vite re-evaluates this entry during development.
+// A production page still creates exactly one fresh root.
+const root: ReturnType<typeof createRoot> =
+  import.meta.hot?.data.reactRoot ?? createRoot(document.getElementById('root')!);
+if (import.meta.hot) import.meta.hot.data.reactRoot = root;
+root.render(
   <ErrorBoundary>
     <App />
   </ErrorBoundary>,

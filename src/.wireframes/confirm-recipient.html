@@ -1,0 +1,57 @@
+---
+name: Confirm Recipient Gate
+description: The explicit send gate: final recipient shown large, the managed sender + personal Reply-To envelope restated, a required verify checkbox that enables DISPATCH, and a sample-data guard state where dispatch is disabled and nothing is sent. Checkbox toggles the button live.
+---
+<html lang="en"><head><meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Mono',monospace;background:transparent;display:flex;align-items:center;justify-content:center;padding:22px}
+.sheet{width:420px;background:linear-gradient(180deg,#161309,#100E08);border:1px solid #2B261C;border-radius:14px;color:#ECE5D6;box-shadow:0 30px 70px rgba(0,0,0,.7);overflow:hidden}
+.hd{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border-bottom:1px solid #221E16}
+.hd .t{font-size:11px;letter-spacing:.2em;color:#948B79}
+.x{color:#6E675A;font-size:14px}
+.body{padding:18px}
+.k{font-size:10px;letter-spacing:.16em;color:#6E675A;margin-bottom:8px}
+.to{font-size:19px;font-weight:600;color:#ECE5D6}
+.who{font-size:12px;color:#948B79;margin-top:5px}
+.env{background:#100E08;border:1px solid #221E16;border-radius:9px;padding:12px 13px;margin-top:15px}
+.erow{display:flex;gap:10px;font-size:12px;align-items:center}
+.erow+.erow{margin-top:8px}
+.el{width:66px;flex:none;font-size:10px;letter-spacing:.12em;color:#6E675A}
+.ev{color:#ECE5D6}
+.mchip{font-size:9px;letter-spacing:.08em;color:#948B79;background:#1B1810;border:1px solid #2B261C;border-radius:4px;padding:2px 6px}
+.chk{display:flex;align-items:center;gap:11px;margin-top:16px;cursor:pointer;user-select:none}
+.box{width:20px;height:20px;border-radius:5px;border:1.5px solid #6E675A;flex:none;display:flex;align-items:center;justify-content:center;transition:.15s}
+.chk.on .box{background:#FFB020;border-color:#FFB020}
+.box svg{width:12px;height:12px;stroke:#0B0A07;stroke-width:3;fill:none;opacity:0;transition:.15s}
+.chk.on .box svg{opacity:1}
+.chk .ct{font-size:12.5px;color:#A79E8C}
+.hint{font-size:11px;color:#6E675A;margin-top:12px;line-height:1.5}
+.act{display:flex;gap:10px;padding:0 18px 18px}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.08em;border-radius:8px;padding:12px 14px;cursor:pointer}
+.disp{flex:1;color:#0B0A07;background:#FFB020;border:none;opacity:.32;pointer-events:none;transition:.2s;box-shadow:none}
+.disp.on{opacity:1;box-shadow:0 0 22px rgba(255,176,32,.3)}
+.cancel{color:#ECE5D6;background:#1B1810;border:1px solid #2B261C}
+</style></head>
+<body>
+<div class="sheet">
+ <div class="hd"><span class="t">CONFIRM RECIPIENT</span><span class="x">✕</span></div>
+ <div class="body">
+  <div class="k">SENDING TO</div>
+  <div class="to">dana.osei@heliogrid.com</div>
+  <div class="who">Dana Osei · Head of Brand Partnerships · Helio Grid</div>
+  <div class="env">
+   <div class="erow"><span class="el">SEND AS</span><span class="ev">partnerships@scout-mail.app</span><span class="mchip">MANAGED</span></div>
+   <div class="erow"><span class="el">REPLY-TO</span><span class="ev">elly@ellyorg.com</span><span class="mchip">YOUR INBOX</span></div>
+  </div>
+  <div class="chk" id="chk"><span class="box"><svg viewBox="0 0 24 24"><polyline points="4 12 10 18 20 6"/></svg></span><span class="ct">I've verified this is the right recipient.</span></div>
+  <div class="hint">Replies route to your inbox via Reply-To. This send is final.</div>
+ </div>
+ <div class="act"><button class="btn disp" id="disp">DISPATCH</button><button class="btn cancel">CANCEL</button></div>
+</div>
+<script>
+var chk=document.getElementById('chk'),disp=document.getElementById('disp');
+chk.onclick=function(){chk.classList.toggle('on');disp.classList.toggle('on',chk.classList.contains('on'));};
+</script>
+</body></html>

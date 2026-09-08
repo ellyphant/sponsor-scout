@@ -1,0 +1,40 @@
+---
+name: Run Status Readout
+description: Honest small-scale readout: LIVE indicator, run scope (5 new + tracked list), tabular elapsed, STOP, and four counters that reflect real work — researched / qualified / matched / drafts.
+---
+<html lang="en"><head><meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Mono',monospace;background:transparent;display:flex;align-items:center;justify-content:center;padding:22px}
+.bar{width:520px;background:linear-gradient(180deg,#14120C,#100E08);border:1px solid #2B261C;border-radius:12px;padding:16px 18px;color:#ECE5D6;box-shadow:0 22px 54px rgba(0,0,0,.55)}
+.top{display:flex;align-items:center;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid #221E16}
+.live{display:flex;align-items:center;gap:9px}
+.pdot{width:9px;height:9px;border-radius:50%;background:#57E39A;box-shadow:0 0 10px #57E39A;animation:p 1.6s ease-in-out infinite}
+@keyframes p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.l{font-size:12px;font-weight:600;letter-spacing:.22em;color:#57E39A}
+.run{font-size:11px;color:#948B79;letter-spacing:.05em}
+.right{display:flex;align-items:center;gap:14px}
+.elapsed{font-size:13px;font-weight:500;color:#ECE5D6;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.stop{font-size:11px;font-weight:600;letter-spacing:.16em;color:#FFB020;border:1px solid rgba(255,176,32,.4);border-radius:6px;padding:6px 12px;background:rgba(255,176,32,.06)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:14px;background:#221E16;border:1px solid #221E16;border-radius:8px;overflow:hidden}
+.cell{background:#100E08;padding:13px 14px}
+.k{font-size:10px;letter-spacing:.16em;color:#948B79;margin-bottom:9px}
+.v{font-size:27px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.a{color:#FFB020}.g{color:#57E39A}.b{color:#ECE5D6}
+.d{font-size:10px;color:#6E675A;margin-top:7px;letter-spacing:.03em}
+</style></head>
+<body>
+<div class="bar">
+ <div class="top">
+  <div class="live"><span class="pdot"></span><span class="l">RUN LIVE</span><span class="run">· RUN-0426 · 5 new + 20 tracked</span></div>
+  <div class="right"><span class="elapsed">00:02:41</span><span class="stop">■ STOP</span></div>
+ </div>
+ <div class="grid">
+  <div class="cell"><div class="k">RESEARCHED</div><div class="v b">5</div><div class="d">+20 watchlist</div></div>
+  <div class="cell"><div class="k">QUALIFIED</div><div class="v a">3</div><div class="d">2 new · 1 list</div></div>
+  <div class="cell"><div class="k">MATCHED</div><div class="v a">2</div><div class="d">to 2 events</div></div>
+  <div class="cell"><div class="k">DRAFTS</div><div class="v g">2</div><div class="d">for review</div></div>
+ </div>
+</div>
+</body></html>

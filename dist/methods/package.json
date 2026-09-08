@@ -1,18 +1,19 @@
 {
-  "name": "hello-world",
+  "name": "sponsor-scout-methods",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "format": "prettier --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
   },
   "dependencies": {
-    "@mindstudio-ai/agent": "^0.1.121"
+    "@mindstudio-ai/agent": "^0.1.121",
+    "zod": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^25.0.0",
-    "prettier": "^3.5.0",
+    "prettier": "^3.9.6",
     "typescript": "^6.0.2"
   }
 }

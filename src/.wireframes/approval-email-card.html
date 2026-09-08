@@ -1,0 +1,66 @@
+---
+name: Approval — Case + Draft
+description: Expanded approval item: cited qualification, matched event quoting CoHost's free-text ask (no dollar figures), a researched CONTACT block with evidence + editable recipient, an explicit SEND AS (managed sender) / REPLY-TO envelope, the drafted email on a light surface, and a review-recipient primary action (no one-tap send).
+---
+<html lang="en"><head><meta charset="utf-8"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Mono',monospace;background:transparent;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:560px;background:#131109;border:1px solid #2B261C;border-radius:14px;color:#ECE5D6;box-shadow:0 26px 66px rgba(0,0,0,.6);overflow:hidden}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid #221E16}
+.nm{font-size:16px;font-weight:600}.sub{font-size:11px;color:#948B79;margin-top:3px}
+.pill{font-size:11px;font-weight:600;color:#57E39A;background:rgba(87,227,154,.1);border:1px solid rgba(87,227,154,.35);border-radius:20px;padding:5px 11px;font-variant-numeric:tabular-nums}
+.sec{padding:14px 18px;border-bottom:1px solid #221E16}
+.lbl{font-size:10px;letter-spacing:.18em;color:#6E675A;margin-bottom:9px}
+.why{font-size:12.5px;line-height:1.6;color:#A79E8C}.why b{color:#FFB020;font-weight:600}
+.cites{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.cite{font-size:10px;color:#948B79;background:#1B1810;border:1px solid #2B261C;border-radius:5px;padding:3px 7px}.cite b{color:#C9A15F;font-weight:400}
+.evt{font-size:12.5px;color:#ECE5D6}.ask{color:#A79E8C;margin-top:4px;font-size:12px}
+.person{font-size:13px;color:#ECE5D6;font-weight:600}.role{color:#948B79;font-weight:400}
+.ev{font-size:12px;color:#A79E8C;line-height:1.55;margin-top:6px}
+.field{display:flex;align-items:center;justify-content:space-between;background:#100E08;border:1px solid #2B261C;border-radius:8px;padding:11px 12px;margin-top:11px}
+.field .fk{font-size:10px;letter-spacing:.14em;color:#6E675A;margin-right:10px}
+.fval{font-size:12.5px;color:#ECE5D6;flex:1}
+.fedit{font-size:10px;letter-spacing:.1em;color:#FFB020}
+.idrow{display:flex;align-items:center;gap:10px;margin-top:9px;font-size:12px}
+.ilbl{font-size:10px;letter-spacing:.14em;color:#6E675A;width:64px;flex:none}
+.ival{color:#ECE5D6}
+.mchip{font-size:9px;letter-spacing:.1em;color:#948B79;background:#1B1810;border:1px solid #2B261C;border-radius:4px;padding:2px 6px}
+.draft{background:#F3F1EC;margin:14px 18px;border-radius:10px;padding:16px 18px;font-family:'Switzer',sans-serif;color:#1B1A16}
+.meta{font-size:11px;color:#8A8577;font-family:'IBM Plex Mono',monospace;padding-bottom:8px;border-bottom:1px solid #E1DDD3;margin-bottom:10px}
+.subj{font-size:15px;font-weight:600;margin-bottom:10px;color:#141310}
+.draft p{font-size:13.5px;line-height:1.62;margin-bottom:9px}
+.act{display:flex;gap:10px;padding:14px 18px}
+.btn{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;letter-spacing:.06em;border-radius:8px;padding:11px 14px;cursor:pointer}
+.review{flex:1;color:#0B0A07;background:#FFB020;border:none;box-shadow:0 0 22px rgba(255,176,32,.28)}
+.edit{color:#ECE5D6;background:#1B1810;border:1px solid #2B261C}
+.reject{color:#FF5D4A;background:transparent;border:1px solid rgba(255,93,74,.35)}
+</style></head>
+<body>
+<div class="card">
+ <div class="hd"><div><div class="nm">Helio Grid</div><div class="sub">Series B · Climate SaaS · San Francisco</div></div><span class="pill">● FIT 0.88</span></div>
+ <div class="sec"><div class="lbl">WHY QUALIFIED</div><div class="why">Closed a <b>$60M Series B</b> with an active brand campaign; sponsored <b>3 comparable developer events</b> in the last year.</div><div class="cites"><span class="cite"><b>↗</b> techcrunch.com</span><span class="cite"><b>↗</b> heliogrid.com/blog</span></div></div>
+ <div class="sec"><div class="lbl">MATCHED EVENT</div><div class="evt">DevWorld Summit</div><div class="ask">ask: "seeking a headline partner for our climate track"</div></div>
+ <div class="sec">
+  <div class="lbl">CONTACT · RESEARCHED</div>
+  <div class="person">Dana Osei <span class="role">· Head of Brand Partnerships</span></div>
+  <div class="ev">Named on the Helio Grid team page and spoke on sponsorship at ClimateHack SF.</div>
+  <div class="cites"><span class="cite"><b>↗</b> heliogrid.com/team</span><span class="cite"><b>↗</b> linkedin.com</span></div>
+  <div class="field"><span class="fk">TO</span><span class="fval">dana.osei@heliogrid.com</span><span class="fedit">✎ EDIT</span></div>
+ </div>
+ <div class="sec">
+  <div class="lbl">ENVELOPE</div>
+  <div class="idrow"><span class="ilbl">SEND AS</span><span class="ival">partnerships@scout-mail.app</span><span class="mchip">MANAGED</span></div>
+  <div class="idrow"><span class="ilbl">REPLY-TO</span><span class="ival">elly@ellyorg.com</span><span class="mchip">YOUR INBOX</span></div>
+ </div>
+ <div class="draft">
+  <div class="meta">TO dana.osei@heliogrid.com · DRAFT</div>
+  <div class="subj">Helio Grid × DevWorld Summit — climate track partner?</div>
+  <p>Hi Dana — I run partnerships for DevWorld Summit, and Helio Grid's work on grid-scale climate tooling is exactly the audience our climate track is built for.</p>
+  <p>We have a headline slot open on that track. Worth a short call this week?</p>
+ </div>
+ <div class="act"><button class="btn review">REVIEW RECIPIENT →</button><button class="btn edit">EDIT DRAFT</button><button class="btn reject">REJECT</button></div>
+</div>
+</body></html>

@@ -14,3 +14,10 @@ node_modules/
 # Web interface build output — the platform builds the SPA at release; never commit it
 # (root dist/ is real source by Remy convention — only the vite output is ignored)
 dist/interfaces/web/dist/
+
+# Private local material and temporary build notes
+.env
+.env.*
+.remy-notes.md
+src/.user-uploads/
+.test-results/
