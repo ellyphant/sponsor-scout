@@ -88,7 +88,10 @@ export function RunPage({ runId }: { runId?: string }) {
   const [scope, setScope] = useState<Scope>({
     city: '',
     vertical: '',
-    from: new Date().toISOString().slice(0, 10),
+    // Leave the date filters empty by default. A browser-clock date here becomes a
+    // hard CoHost filter that silently drops every event dated before the user's
+    // local "today" — the server already limits the snapshot to upcoming events.
+    from: '',
     to: '',
     newLimit: 5,
   });
@@ -566,10 +569,11 @@ export function RunPage({ runId }: { runId?: string }) {
               onChange={(e) => setScope({ ...scope, vertical: e.target.value })}
             />
           </Field>
-          <Field label="From">
+          <Field label="From (optional)">
             <input
               type="date"
               value={scope.from}
+              placeholder="Any upcoming date"
               onChange={(e) => setScope({ ...scope, from: e.target.value })}
             />
           </Field>
