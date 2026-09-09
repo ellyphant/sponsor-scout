@@ -84,7 +84,7 @@ export function MatchedEvent({
         <p className="match-why">{match.reason}</p>
         <blockquote className="ask">
           <span>THE ASK</span>
-          {event.sponsorshipNeed}
+          {event.sponsorshipNeed || <em className="muted">No specific ask stated.</em>}
         </blockquote>
         <details className="match-dimensions">
           <summary>

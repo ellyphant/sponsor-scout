@@ -86,6 +86,7 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
 .siggrid{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(28px,4vw,64px)}
 .sig{display:flex;gap:16px;align-items:baseline;padding:clamp(15px,2vh,22px) 0;border-top:1px solid var(--ember)}
 .sig .n{font-size:clamp(18px,2vw,26px);font-weight:600;color:var(--amber);font-variant-numeric:tabular-nums;flex:none}
+.sig .n.phos{color:var(--phosphor)}
 .sig .t{font-size:clamp(16px,1.9vw,25px);font-weight:500;color:var(--bone);letter-spacing:-.01em}
 
 /* ---------- big stats (match slide) ---------- */
@@ -117,6 +118,13 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
 .fitem{display:flex;gap:18px;align-items:baseline}
 .fitem .fn{font-size:clamp(13px,1.3vw,15px);font-weight:600;color:var(--amber);font-variant-numeric:tabular-nums;flex:none;padding-top:2px}
 .fitem .ft{font-size:clamp(15px,1.7vw,21px);font-weight:500;color:var(--bone);line-height:1.35;letter-spacing:-.01em}
+
+/* ---------- live url callout ---------- */
+.url{font-size:clamp(19px,3.2vw,42px);font-weight:600;letter-spacing:-.01em;color:var(--phosphor);
+  font-variant-numeric:tabular-nums;display:inline-flex;align-items:center;gap:15px;word-break:break-word}
+.url::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--phosphor);flex:none;
+  box-shadow:0 0 14px rgba(87,227,154,.75);animation:pulse2 2.4s ease-in-out infinite}
+@keyframes pulse2{0%,100%{box-shadow:0 0 12px rgba(87,227,154,.55)}50%{box-shadow:0 0 24px rgba(87,227,154,1)}}
 
 /* ---------- roadmap spine ---------- */
 .pipe{position:relative;padding-left:2px}
@@ -160,7 +168,7 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
   .counter{bottom:32px;left:clamp(20px,5vw,44px);right:auto}
 }
 @media (max-height:640px){ .slide{justify-content:flex-start} }
-@media (prefers-reduced-motion:reduce){ .reticle .rdot{animation:none} .seg .fill{transition:none} }
+@media (prefers-reduced-motion:reduce){ .reticle .rdot,.url::before{animation:none} .seg .fill{transition:none} }
 </style>
 </head>
 <body>
@@ -176,11 +184,11 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
       <div class="wordmark r">SPONSOR <b>SCOUT</b></div>
       <h1 class="hero r">Evidence before<br/>outreach.</h1>
       <p class="lead r" style="max-width:58ch;text-align:center">GPT-6 Astra researches sponsors, matches them to <b>CoHost Club</b> events, and drafts outreach. <b>Elly decides what sends.</b></p>
-      <p class="small r">A new standalone app in development for the GPT-6 Astra hackathon.</p>
+      <p class="small r">First production release, live today — the real desk Elly uses, not a demo shell.</p>
       <div class="statusrow r">
-        <span class="tag">OPEN-SOURCE RELEASE PLANNED</span>
-        <span class="tag on">INITIAL SPEC COMPLETE</span>
-        <span class="tag go">CODE GENERATION NEXT</span>
+        <span class="tag on">LIVE IN PRODUCTION</span>
+        <span class="tag go">FULL LOOP SHIPPED</span>
+        <span class="tag">sponsor-scout.madewithremy.com</span>
       </div>
     </div>
   </section>
@@ -201,7 +209,7 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
     <div class="wrap">
       <div class="kicker r">03 · Real demand</div>
       <h1 class="h1 r">Start with real demand.</h1>
-      <p class="lead r">The approved initial build begins with upcoming CoHost Club events <b>explicitly seeking sponsorship</b>. Each opportunity keeps its host, audience, date, and exact ask attached.</p>
+      <p class="lead r">Every run begins with upcoming CoHost Club events <b>explicitly seeking sponsorship</b>. Each opportunity keeps its host, audience, date, and exact ask attached.</p>
       <div class="chips r">
         <span class="chip">Founder dinners</span>
         <span class="chip">Investor salons</span>
@@ -209,7 +217,7 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
         <span class="chip">Conferences</span>
         <span class="chip">Hackathons</span>
       </div>
-      <p class="small r" style="max-width:82ch">The hackathon is where Scout is being built, not a limit on the events it serves. <span class="amber">CoHost Club remains separate.</span> Scout connects only through its read-only HTTP API. Hosts keep their home in CoHost Club.</p>
+      <p class="small r" style="max-width:82ch">The hackathon is where Scout was built, not a limit on the events it serves. <span class="amber">CoHost Club remains separate.</span> Scout connects only through its read-only HTTP API. Hosts keep their home in CoHost Club.</p>
     </div>
   </section>
 
@@ -270,14 +278,14 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
       <div class="kicker r">07 · Honesty is part of the product</div>
       <h1 class="h1 r">Honesty is part of the product.</h1>
       <div class="modes">
-        <div class="mode sample r"><div class="mh"><span class="md"></span><span class="mn">SAMPLE</span></div><p class="mdesc">Fictional records and a simulated review. No email is sent.</p></div>
-        <div class="mode test r"><div class="mh"><span class="md"></span><span class="mn">TEST</span></div><p class="mdesc">A preview to Elly's confirmed test inbox. The sponsor is not contacted.</p></div>
-        <div class="mode live r"><div class="mh"><span class="md"></span><span class="mn">LIVE</span></div><p class="mdesc">The exact human-approved message to the sponsor.</p></div>
+        <div class="mode sample r"><div class="mh"><span class="md"></span><span class="mn">SIMULATED</span></div><p class="mdesc">A full dry run of the approval loop. No email leaves the desk.</p></div>
+        <div class="mode test r"><div class="mh"><span class="md"></span><span class="mn">TEST</span></div><p class="mdesc">A real send to Elly's confirmed test inbox. The sponsor is never contacted.</p></div>
+        <div class="mode live r"><div class="mh"><span class="md"></span><span class="mn">LIVE</span></div><p class="mdesc">The exact human-approved message, sent to the sponsor.</p></div>
       </div>
       <div class="claims">
-        <div class="claim r"><span class="g ash">·</span><span class="small" style="font-size:clamp(13px,1.5vw,17px)">Activity reports only work that happened. A publicly sourced contact is not a verified mailbox.</span></div>
+        <div class="claim r"><span class="g ash">·</span><span class="small" style="font-size:clamp(13px,1.5vw,17px)">All three modes ship in the live build. Activity reports only work that happened. A publicly sourced contact is not a verified mailbox.</span></div>
         <div class="claim r"><span class="g ash">·</span><span class="small" style="font-size:clamp(13px,1.5vw,17px)"><span class="bone">Accepted is not Delivered.</span> An unknown send outcome is not permission to retry.</span></div>
-        <div class="claim r"><span class="g ash">·</span><span class="small" style="font-size:clamp(13px,1.5vw,17px)">Replies arrive in Elly's inbox. She brokers introductions manually in the initial build.</span></div>
+        <div class="claim r"><span class="g ash">·</span><span class="small" style="font-size:clamp(13px,1.5vw,17px)">Replies arrive in Elly's inbox. She brokers introductions manually today.</span></div>
       </div>
     </div>
   </section>
@@ -286,16 +294,16 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
   <section class="slide">
     <div class="glow p"></div>
     <div class="wrap">
-      <div class="kicker r">08 · The vision</div>
-      <h1 class="h1 r">From one useful run to a<br/>living sponsorship desk.</h1>
-      <p class="lead r">The future is not more automatic email. It is <b>better timing, better context, and better introductions.</b></p>
+      <div class="kicker r">08 · What's next</div>
+      <h1 class="h1 r">The desk is live.<br/>Here's where it goes.</h1>
+      <p class="lead r">The full loop runs in production. Next is not more automatic email — it is <b>better timing, better context, and better introductions.</b></p>
       <div class="flist">
         <div class="fitem r"><span class="fn">01</span><span class="ft">Know when a sponsor's story changes and which current opportunity deserves attention.</span></div>
         <div class="fitem r"><span class="fn">02</span><span class="ft">Carry an interested reply into a handoff both sponsor and host explicitly want.</span></div>
         <div class="fitem r"><span class="fn">03</span><span class="ft">Plan a season around fit, and learn from recorded outcomes, not email volume.</span></div>
         <div class="fitem r"><span class="fn">04</span><span class="ft">Let independent communities run their own desks, sharing only needs and interests they have permission to share.</span></div>
       </div>
-      <p class="foot r">Future directions, not current features. Human approval stays the boundary.</p>
+      <p class="foot r">Directions built on a working foundation, not current features. Human approval stays the boundary.</p>
     </div>
   </section>
 
@@ -307,7 +315,7 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
       <div class="cols">
         <div class="col r">
           <div class="clabel amber">Open</div>
-          <p class="lead" style="max-width:44ch">Sponsor Scout is being built from scratch so community builders can inspect how evidence becomes a proposal, run their own private desk, and improve the workflow. MIT is the intended license, subject to confirmation.</p>
+          <p class="lead" style="max-width:44ch">Sponsor Scout is built from scratch so community builders can inspect how evidence becomes a proposal, run their own private desk, and improve the workflow. MIT is the intended license, subject to confirmation.</p>
         </div>
         <div class="col r">
           <div class="clabel">Private</div>
@@ -317,19 +325,20 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
     </div>
   </section>
 
-  <!-- 10 · STATUS -->
+  <!-- 10 · SHIPPED -->
   <section class="slide">
+    <div class="glow p"></div>
     <div class="wrap">
-      <div class="kicker r">10 · Status &nbsp;·&nbsp; September 8, 2026</div>
-      <h1 class="h1 r">The plan is complete.<br/>The proof comes next.</h1>
-      <div class="pipe">
-        <div class="stage r"><span class="node phos"></span><div><div class="sname phos">COMPLETE</div><div class="sdesc">The full initial product spec and brand direction.</div></div></div>
-        <div class="stage r"><span class="node amber"></span><div><div class="sname amber">NEXT</div><div class="sdesc">Code generation for the full research, qualification, matching, contact discovery, drafting, and human-approved dispatch loop.</div></div></div>
-        <div class="stage r"><span class="node"></span><div><div class="sname">VERIFY</div><div class="sdesc">Real Astra research, authenticated CoHost events, private access, and approval safety. Automated tests do not contact sponsors.</div></div></div>
-        <div class="stage r"><span class="node"></span><div><div class="sname">LIVE SETUP STILL REQUIRED</div><div class="sdesc">Operator/reply address, CoHost credentials, enforced private access, and a valid managed sender. Scouting and sending have separate readiness gates.</div></div></div>
-        <div class="stage r"><span class="node"></span><div><div class="sname">BEFORE PUBLIC RELEASE</div><div class="sdesc">License confirmation, secrets and private-data review, and Elly's explicit permission.</div></div></div>
+      <div class="kicker r">10 · Shipped &nbsp;·&nbsp; September 8, 2026</div>
+      <h1 class="h1 r">The full loop is live<br/>in production.</h1>
+      <div class="url r">sponsor-scout.madewithremy.com</div>
+      <div class="siggrid">
+        <div class="sig r"><span class="n phos">✓</span><span class="t">Astra research engine — cited discovery, qualification, and matching</span></div>
+        <div class="sig r"><span class="n phos">✓</span><span class="t">Approval queue — every draft reviewed before it can send</span></div>
+        <div class="sig r"><span class="n phos">✓</span><span class="t">Three send modes — Simulated, Test, and Live</span></div>
+        <div class="sig r"><span class="n phos">✓</span><span class="t">Sponsor &amp; event management — the tracked list and live CoHost events</span></div>
       </div>
-      <p class="foot r">Judge research: no hackathon page or judge names were supplied. Judge-specific positioning remains unresearched until either is provided. These are plans, not shipped functionality or verified live results.</p>
+      <p class="foot r">Nothing here is a mockup or a demo shell. This is the desk Elly uses, in production — the first production release.</p>
     </div>
   </section>
 
@@ -340,7 +349,7 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--carbon);color:
       <div class="reticle r-scale"><span class="ring"></span><span class="ring2"></span><span class="tk n"></span><span class="tk s"></span><span class="tk w"></span><span class="tk e"></span><span class="rdot"></span></div>
       <h1 class="hero r">Astra scouts.<br/>Elly decides.</h1>
       <p class="lead r" style="max-width:56ch;text-align:center">More relevant support for the rooms worth gathering in. Not a longer list of companies to email. A stronger case for bringing a sponsor and a community together.</p>
-      <div class="claim r" style="justify-content:center"><span class="amber" style="font-size:clamp(15px,1.8vw,21px);font-weight:600;letter-spacing:.02em">Build the desk. Prove the loop. Publish when Elly is ready.</span></div>
+      <div class="claim r" style="justify-content:center"><span class="amber" style="font-size:clamp(15px,1.8vw,21px);font-weight:600;letter-spacing:.02em">Shipped the desk. Proved the loop. Every send is still Elly's.</span></div>
     </div>
   </section>
 

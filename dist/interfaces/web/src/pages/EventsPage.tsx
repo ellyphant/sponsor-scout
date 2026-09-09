@@ -142,7 +142,9 @@ export function EventsPage() {
                     <td className="number">{dateLabel(item.date.unixMs)}</td>
                     <td className="number">{item.size.capacity ?? item.size.bucket}</td>
                     <td>
-                      <p className="ask-excerpt">{item.sponsorshipNeed}</p>
+                      <p className="ask-excerpt">
+                        {item.sponsorshipNeed || <span className="muted">No stated ask</span>}
+                      </p>
                     </td>
                     <td className="number amber">
                       {
@@ -221,7 +223,7 @@ export function EventsPage() {
             </div>
             <blockquote className="ask hero-ask">
               <span>THE SPONSORSHIP ASK</span>
-              {event.sponsorshipNeed}
+              {event.sponsorshipNeed || <em className="muted">No specific ask stated.</em>}
             </blockquote>
             <section className="case-section">
               <h3 className="section-title">ABOUT THE EVENT</h3>

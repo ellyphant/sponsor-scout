@@ -72,7 +72,7 @@ export const eventSchema = z.object({
       (d) => Number.isFinite(Date.parse(d.iso)) && Math.abs(Date.parse(d.iso) - d.unixMs) < 1000,
       'Event date is invalid.',
     ),
-  sponsorshipNeed: z.string().min(1).max(10000),
+  sponsorshipNeed: z.string().max(10000).default(''),
   host: z.object({
     name: z.string(),
     company: z.string().default(''),

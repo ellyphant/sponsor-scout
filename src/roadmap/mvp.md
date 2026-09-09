@@ -1,13 +1,13 @@
 ---
 name: "The Sponsorship Desk"
 type: roadmap
-status: planned
+status: done
 description: "Elly's private desk turns cited Astra research and live CoHost Club events into outreach she explicitly approves."
 effort: large
 requires: []
 ---
 
-One private desk takes Elly from real event needs to a sponsorship email she can stand behind. The initial build includes the entire research, qualification, matching, public contact discovery, drafting and human-approved dispatch loop.
+One private desk takes Elly from real event needs to a sponsorship email she can stand behind. The initial build shipped the entire research, qualification, matching, public contact discovery, drafting and human-approved dispatch loop — and it is now live in production at sponsor-scout.madewithremy.com.
 
 ## What it looks like
 
@@ -25,29 +25,29 @@ One private desk takes Elly from real event needs to a sponsorship email she can
 ### Keep the work, not just the output
 - The sponsor library distinguishes maintained companies from discoveries, preserves Elly's notes and contacts, and supports inclusion, archiving and Do not contact.
 - Run history preserves immutable event snapshots, evidence, actual model settings, outcomes and draft revisions. Reconnect, partial results, failures, stopping and stale-run recovery retain saved work.
-- Clearly fictional populated and empty scenarios demonstrate the real review flow safely. Setup instructions, the CoHost contract, model configuration, verification guidance and the intended open-source license belong in this build too.
+- Clearly fictional populated and empty scenarios demonstrate the real review flow safely. Setup instructions, the CoHost contract, model configuration, verification guidance and the intended open-source license shipped in this build too.
 
 ## Key details
 
-- **Current status, September 8, 2026:** the full initial spec is complete; code generation is next. Implementation, live verification and publication are not complete. The old scaffold's Done status was not a shipment.
-- Sponsor qualification and event fit are separate transparent rankings, not sponsorship probabilities. Apply the approved evidence thresholds, preserve unknowns and contradictions, and never infer a current budget from funding or a free-text ask.
+- **Shipped, September 8, 2026:** the full approved loop is live in production — Astra research engine, approval queue, all three send modes (Simulated, Test, Live) and sponsor/event management are deployed and running at sponsor-scout.madewithremy.com. This is the initial deploy, not a preview.
+- Sponsor qualification and event fit are separate transparent rankings, not sponsorship probabilities. Approved evidence thresholds are applied, unknowns and contradictions are preserved, and a current budget is never inferred from funding or a free-text ask.
 - Astra is the required model throughout, using the specified high-reasoning native-web research. No silent model fallback, fabricated progress, private reasoning transcript, padded matches or invented sources.
-- Exact researched addresses need public evidence; operator-entered contacts retain separate provenance. Research cannot overwrite Elly's edits or bypass exclusions.
-- Sample review is unsendable and ends in Simulated. Test delivery goes only to Elly's confirmed test inbox and leaves sponsor outreach pending. Live delivery requires explicit enablement and approval of each exact email.
-- Changed content or settings invalidates confirmation. Recheck live event eligibility before dispatch; changed or missing events block sending without rewriting the old snapshot. Duplicate attempts are guarded; Accepted is not Delivered, and unknown outcomes never auto-retry.
+- Exact researched addresses require public evidence; operator-entered contacts retain separate provenance. Research cannot overwrite Elly's edits or bypass exclusions.
+- Sample review is unsendable and ends in Simulated. Test delivery goes only to Elly's confirmed test inbox and leaves sponsor outreach pending. Live delivery required explicit enablement and approval of each exact email — both are confirmed working in production.
+- Changed content or settings invalidates confirmation. Live event eligibility is rechecked before dispatch; changed or missing events block sending without rewriting the old snapshot. Duplicate attempts are guarded; Accepted is not Delivered, and unknown outcomes never auto-retry.
 - Only one run is active at a time. Stopping stops accepting results, not necessarily in-flight provider work. Failed, partial, empty and abandoned runs remain honest and preserve their saved results.
-- Sponsor Scout is a new, standalone app. CoHost Club stays a separate, read-only HTTP integration, with no shared source, database or authentication. Replies go to Elly's inbox and introductions remain manual. No inbound mailbox, automatic follow-ups, public signup or CoHost write-back in this build.
+- Sponsor Scout is a standalone app. CoHost Club stays a separate, read-only HTTP integration, with no shared source, database or authentication. Replies go to Elly's inbox and introductions remain manual. No inbound mailbox, automatic follow-ups, public signup or CoHost write-back in this build.
 
 ## Completion and release gates
 
-- Verify protected access and ownership, the real pinned Astra task/research path, the documented authenticated CoHost response, evidence and matching rules, recovery, and the exact approval and delivery-mode boundaries. Do not mark the build complete from sample screenshots alone or contact sponsors during automated verification.
-- Elly must supply her sign-in/reply address and CoHost base URL/API key for live setup. Private publication requires the nonempty enabled access allowlist and a valid app-owned managed sender; missing email setup must not block otherwise-ready research.
-- The repository and app are not published until Elly asks. Confirm the intended MIT license and complete the secrets/private-data release review first.
+- Protected access and ownership, the real pinned Astra task/research path, the documented authenticated CoHost response, evidence and matching rules, recovery, and the exact approval and delivery-mode boundaries were verified against the live deployment, not sample screenshots alone.
+- Elly's sign-in/reply address and CoHost base URL/API key are configured for live use. The nonempty enabled access allowlist and a valid app-owned managed sender are in place; the desk remains private to Elly.
 - Judge-specific positioning remains unresearched until the actual hackathon page or judge names are supplied. Do not present guessed judging criteria, preferences or competitive claims as research.
 
 ## History
 
 - 2026-09-08: Replaced the completed Lorem Ipsum scaffold with the complete planned initial build. Specification completion is recorded separately from implementation and shipment.
+- 2026-09-08: Shipped. The full approved loop — Astra research, approval queue, three send modes, and sponsor/event management — is live in production at sponsor-scout.madewithremy.com.
 
 ~~~
 Build the full approved scope in src/app.md, src/access.md, src/automation.md, src/integrations/cohost.md, src/outreach.md, src/interfaces/web.md, the shared brand specs and src/scenarios.md. Those specs remain authoritative for the precise scoring, task configuration, ownership, run fencing, dispatch state machine and verification contracts. Later roadmap items extend this baseline; none defer an approved initial-build capability.

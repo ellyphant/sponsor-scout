@@ -20,16 +20,24 @@ export async function fetchEvents(scope: Partial<Scope> = {}) {
   } catch {
     throw new Error('The CoHost connection needs a valid HTTPS base URL.');
   }
+  // CoHost Club expects a POST with the key in a custom X-API-Key header and the
+  // filters in the JSON body. Never send Authorization: Bearer — the Remy platform
+  // intercepts that header and validates it as its own platform key before CoHost's
+  // code ever runs, so every value comes back as "invalid or revoked."
+  const body: Record<string, string> = {};
   for (const key of ['city', 'vertical', 'from', 'to'] as const)
-    if (filters[key]) url.searchParams.set(key, filters[key]);
+    if (filters[key]) body[key] = filters[key];
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 10000);
   try {
     const response = await fetch(url, {
+      method: 'POST',
       headers: {
-        Authorization: `Bearer ${process.env.COHOST_API_KEY}`,
+        'X-API-Key': process.env.COHOST_API_KEY!,
+        'Content-Type': 'application/json',
         Accept: 'application/json',
       },
+      body: JSON.stringify(body),
       redirect: 'error',
       signal: controller.signal,
     });
